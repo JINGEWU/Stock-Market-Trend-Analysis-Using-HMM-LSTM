@@ -6,10 +6,14 @@ The hidden Markov model (HMM) is a signal prediction model which has been used t
 
 Process
 =======
-> Experiment with 4 different models: <br>
->> GMM-HMM <br>
->> XGB-HMM <br>
->> GMM-HMM-LSTM <br>
->> XGB-HMM-LSTM <br>
-> Compared with the results: <br>
+ 
+ Experiment with 4 different models: <br>
+ GMM-HMM <br>
+ XGB-HMM <br>
+ GMM-HMM-LSTM <br>
+ XGB-HMM-LSTM <br>
+ 
+ Compared with the results: <br>
+ -------
+ 
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/test_visual.png)  

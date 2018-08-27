@@ -44,17 +44,15 @@ Process
  Compared with the results: <br>
  -------
 
-                                                 train_set
-                                                 ---------
- 
- 
+*train_set
+
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/train1.jpg)  
 
-                                                  test_set
+*test_set
 
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/test1.jpg)  
 
-                                          #####best_iteration
+*best_iteration
 
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/best_iter.png)  
 

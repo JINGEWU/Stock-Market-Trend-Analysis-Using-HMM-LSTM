@@ -36,10 +36,12 @@ Process
  ```
  
  Experiment with 4 different models: <br>
- GMM-HMM <br>
- XGB-HMM <br>
- GMM-HMM-LSTM <br>
- XGB-HMM-LSTM <br>
+ ---
+ 
+ * ## GMM-HMM <br>
+ * ## XGB-HMM <br>
+ * ## GMM-HMM-LSTM <br>
+ * ## XGB-HMM-LSTM <br>
  
  Compared with the results: <br>
  -------

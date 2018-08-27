@@ -17,3 +17,44 @@ Process
  -------
  
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/test_visual.png)  
+
+Contribution
+=====
+# Contributors
+
+* Junbang Huo
+* Yulin Wu
+* Jinge Wu
+
+# Institutions
+
+* AI&FintechLab of Likelihood Technology
+* Sun Yat-sen University
+* Xi'an Jiaotong-Liverpool University
+
+Acknowledgement
+===
+
+We would like to say thanks to Maxwell Liu from ShingingMidas Private Fund, Jiahui Wu and Xingyu Fu from Sun Yat-sen University for their generous guidance throughout the project
+
+Set up
+===
+
+Python Version
+
+* 3.6
+
+Modules needed
+
+*
+*
+*
+*
+*
+
+Contact
+===
+
+*
+*
+* Jinge.Wu16@student.xjtlu.edu.cn

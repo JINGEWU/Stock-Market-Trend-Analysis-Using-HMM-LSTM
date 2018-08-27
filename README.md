@@ -7,6 +7,7 @@ The hidden Markov model (HMM) is a signal prediction model which has been used t
 Process
 =======
  
+ Using data from 2007-2018 in Shanghai and Shenzhen A share stock market, including daily price and trade volume and over 200 feature dataset, we divided them into 
  Experiment with 4 different models: <br>
  GMM-HMM <br>
  XGB-HMM <br>

@@ -17,7 +17,15 @@ Process
  Compared with the results: <br>
  -------
  
-![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/test_visual.png)  
+![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/test1.jpg)  
+
+![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/test2.jpg) 
+
+![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/train1.jpg)  
+
+![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/train2.jpg)  
+
+![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/best_iter.png)  
 
 Contribution
 =====

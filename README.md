@@ -1,13 +1,13 @@
 # Stock-Market-Trend-Analysis-Using-HMM-LSTM
-Introduction
+## Introduction
 =============
 
 The hidden Markov model (HMM) is a signal prediction model which has been used to predict economic regimes and stock prices. This project intends to achieve the goal of applying machine learning algrithms into stock market. Our main purpose is to predict the ups and downs of one stock by using HMM-LSTM.<br>
 
-Process
+## Process
 =======
  
- Using data from 2007-2018 in Shanghai and Shenzhen A share stock market, including daily price and trade volume and over 200 types of feature, we divided them into 8 types of features and make 8 HMMs.<br>
+Using data from 2007-2018 in Shanghai and Shenzhen A share stock market, including daily price and trade volume and over 200 types of feature, we divided them into 8 types of features and make 8 HMMs. Then combined them together to predict ups and downs of stock price the next day. During which, we used GMM and XGBoost to fit the emission matrix B of continuous HMMs and used LSTM to find a better connection of X and Y. Moreover, an useful method of labeling called the reiple barrier method is well used to find relationship between hidden states and the trends of stock price.<br>
  
  ```
    #行情因子
@@ -35,15 +35,15 @@ Process
    type_zengzhang = ['EGRO','FinancingCashGrowRate','InvestCashGrowRate','NetAssetGrowRate','NetProfitGrowRate','NPParentCompanyGrowRate','OperatingProfitGrowRate','OperatingRevenueGrowRate','OperCashGrowRate','SUE','TotalAssetGrowRate','TotalProfitGrowRate','REC','FEARNG','FSALESG','SUOI']
  ```
  
- Experiment with 4 different models: <br>
+### Experiment with 4 different models: <br>
  ---
  
- * ## GMM-HMM <br>
- * ## XGB-HMM <br>
- * ## GMM-HMM-LSTM <br>
- * ## XGB-HMM-LSTM <br>
+ * #### GMM-HMM <br>
+ * #### XGB-HMM <br>
+ * #### GMM-HMM-LSTM <br>
+ * #### XGB-HMM-LSTM <br>
  
- Compared with the results: <br>
+### Compared with the results: <br>
  -------
 
 * train_set
@@ -58,41 +58,41 @@ Process
 
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/best_iter.png)  
 
-Contribution
+##Contribution
 =====
-# Contributors
+### Contributors
 
-* Junbang Huo
-* Yulin Wu
-* Jinge Wu
+* ####Junbang Huo
+* ####Yulin Wu
+* ####Jinge Wu
 
-# Institutions
+### Institutions
 
-* AI&FintechLab of Likelihood Technology
-* Sun Yat-sen University
-* Xi'an Jiaotong-Liverpool University
+* ####AI&FintechLab of Likelihood Technology
+* ####Sun Yat-sen University
+* ####Xi'an Jiaotong-Liverpool University
 
-Acknowledgement
+##Acknowledgement
 ===
 
 We would like to say thanks to Maxwell Liu from ShingingMidas Private Fund, Jiahui Wu and Xingyu Fu from Sun Yat-sen University for their generous guidance throughout the project
 
-Set up
+##Set up
 ===
 
 Python Version
 
-* 3.6
+* ####3.6
 
-Modules needed
+###Modules needed
 
-* numpy
-* pandas
-* hmmlearn
-* xgboost
-* ...
+* ####numpy
+* ####pandas
+* ####hmmlearn
+* ####xgboost
+* ####...
 
-Contact
+##Contact
 ===
 
 * huojb3@mail2.sysu.edu.cn

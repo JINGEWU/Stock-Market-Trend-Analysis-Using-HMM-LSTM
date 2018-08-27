@@ -10,3 +10,4 @@ Process
 ## GMM-HMM-LSTM
 ## XGB-HMM-LSTM
 # Compared with the results:
+![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/test_visual.png)  

@@ -46,15 +46,21 @@ Python Version
 
 Modules needed
 
-*
-*
-*
-*
-*
+* numpy
+* pandas
+* random
+* matplotlib
+* pickle
+* keras
+* hmmlearn
+* xgboost
+* sklearning.processing
+* os
+* scipy
 
 Contact
 ===
 
 *
-*
+* wuylin6@mail2.sysu.edu.cn
 * Jinge.Wu16@student.xjtlu.edu.cn

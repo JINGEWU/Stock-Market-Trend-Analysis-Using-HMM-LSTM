@@ -56,8 +56,8 @@ Using data from 2007-2018 in China's A share stock market, including daily price
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/best_iter.png)  
 
 * #### Accuracy
-   GMM-HMM-LSTM performs 76.1612738%<br>
-   XGB-HMM-LSTM performs 80.6991611%.
+   GMM-HMM-LSTM performs 76.1612738% <br>
+   XGB-HMM-LSTM performs 80.6991611% <br>
 
 ## Contribution
 

@@ -51,9 +51,11 @@ Using data from 2007-2018 in China's A share stock market, including daily price
 
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/test1.jpg)  
 
-* #### best_iteration
+* #### iteration_process
 
 ![](https://github.com/JINGEWU/Stock-Market-Trend-Analysis-Using-HMM-LSTM/raw/master/FIGURE/best_iter.png)  
+
+* #### Accuracy
 
 ## Contribution
 

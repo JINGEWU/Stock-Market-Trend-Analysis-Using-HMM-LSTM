@@ -95,4 +95,4 @@ We would like to say thanks to Maxwell Liu from ShingingMidas Private Fund, Jiah
 * liumwen@shiningmidas.com
 * huojb3@mail2.sysu.edu.cn
 * wuylin6@mail2.sysu.edu.cn
-* jinge.wu.20@ucl.ac.uk
+* jinge.wu@outlook.com

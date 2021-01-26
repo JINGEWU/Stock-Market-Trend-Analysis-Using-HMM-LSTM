@@ -92,6 +92,7 @@ We would like to say thanks to Maxwell Liu from ShingingMidas Private Fund, Jiah
 * #### ...
 
 ## Contact
+Please contact Mingwen Liu(刘铭文) liumwen@shiningmidas.com for more information about data.
 * liumwen@shiningmidas.com
 * huojb3@mail2.sysu.edu.cn
 * wuylin6@mail2.sysu.edu.cn

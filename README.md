@@ -1,4 +1,7 @@
 # Stock-Market-Trend-Analysis-Using-HMM-LSTM
+
+Update: There is new version of this project, see more details on https://github.com/Yikiwi13/HMM-GMM-Timing-Strategy.git
+
 ## Introduction
 
 The hidden Markov model (HMM) is a signal prediction model which has been used to predict economic regimes and stock prices. This project intends to achieve the goal of applying machine learning algrithms into stock market. The long short term memory model (LSTM) ensures that the previous information can continue to propagate backwards without disappearing as the hidden layer continuously superimposes the input sequence under the new time state.Our main purpose is to predict the ups and downs of one stock by using HMM-LSTM.<br> 

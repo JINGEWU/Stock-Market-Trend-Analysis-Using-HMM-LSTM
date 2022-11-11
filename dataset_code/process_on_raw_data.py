@@ -1,5 +1,5 @@
 """
-    由规定的feature_col，得到满足条件的链的数据
+     From the specified feature_col, get the data of the chain that meets the conditions
 """
 
 
@@ -12,9 +12,9 @@ from scipy import interpolate
 
 def form_file_path_by_intID(intID):
     # input:
-    #     int类型，股票代码的int
+    #   int type, int of stock symbol
     # output:
-    #     str类型，文件的路径，可以直接使用
+    #   str type, the path of the file, can be used directly
 
     temp = os.listdir('C:/Users/Administrator/Desktop/HMM_program/save/classified by id')
     intID_list = [int(i[:-9]) for i in temp]
@@ -33,11 +33,11 @@ def form_file_path_by_intID(intID):
 
 def df_col_quchong(df):
     # input:
-    #     df, dataframe
+    #   df, dataframe
     # output:
-    #     有些时候merge完，如果merge的两个df有同样的col_name，那么新的df会有col_name_x, col_name_y
-    #     那么这时候就把这两个列名称删掉，只保留一个，并且保留的那个的列名称变为col_name
-    #     返回处理后的结果
+    #   Sometimes the merge is finished, if the two dfs of the merge have the same col_name, then the new df will have col_name_x, col_name_y
+    #   Then delete these two column names at this time, keep only one, and the column name of the reserved one becomes col_name
+    #   return the processed result
 
     feature_col = [i for i in df.columns]
     warm_record = []
@@ -76,9 +76,9 @@ def df_col_quchong(df):
 
 
 def replace_price_0_to_nan(df):
-    # 针对价格的数据，如果是0的话，赋值为nan，留给后面的插值fillna模块处理
+    # For the price data, if it is 0, assign the value to nan and leave it to the subsequent interpolation fillNAN module for processing
 
-    col_list = ['preClosePrice', 'actPreClosePrice', 'openPrice', 'highestPrice', 'lowestPrice', 'closePrice']
+    col_list = ['preClose','Open', 'High', 'Low', 'Close']
     for i in col_list:
         temp = np.array(df[i].values)
         temp[temp == 0] = np.nan
@@ -87,9 +87,9 @@ def replace_price_0_to_nan(df):
 
 
 def replace_vol_0_to_1(df):
-    # 针对vol是0的数据，对于后面取log处理的时候，会导致inf，所以取代为1
+    # For the data whose vol is 0, when the log is processed later, it will cause inf, so replace it with 1
 
-    col_list = ['turnoverVol', 'turnoverValue', 'dealAmount']
+    col_list = ['Volume']
     for i in col_list:
         temp = np.array(df[i].values)
         temp[temp == 0] = 1
@@ -99,12 +99,12 @@ def replace_vol_0_to_1(df):
 
 def fenge_by_isOpen(df, N=50):
     # input:
-    #     df, 正常格式下的df
-    #     N, 保证分割出来的df的长度要大于N
+    #   df, df in normal format
+    #   N, ensure that the length of the divided df is greater than N
     # output:
-    #     list类型，里面装了分割后的df
+    #   list type, which contains the divided df
 
-    # 将持续5天及以上没有开盘，那么就分割
+    # Will last 5 days or more without opening, then split
     df_record = []
     df.sort_values(['tradeDate'], inplace=True, ascending=True)
     
@@ -138,11 +138,11 @@ def form_label(df, threshold_type='ratio', threshold=0.05, T=5):
     #     T: length of triple barries
     # output:
     #     label: array, (df.shape[0], )
-    #     输出结果为0，-1，1，-2，其中-2表示长度不够
+    #     The output result is 0, -1, 1, -2, where -2 means the length is not enough
     
-    df.sort_values(['tradeDate'], inplace=True, ascending=True)
+    df.sort_values(['tradingDate'], inplace=True, ascending=True)
     
-    close_price_array = np.array(df['closePrice'].values)
+    close_price_array = np.array(df['Close'].values)
     label_array = np.zeros(len(close_price_array))-2
     for i in range(len(close_price_array)):
         if len(close_price_array)-i-1 < T:
@@ -173,9 +173,9 @@ def form_label(df, threshold_type='ratio', threshold=0.05, T=5):
 
 def array_isnan(array):
     # input:
-    #     数组类型，一维的二维的都行，里面的数据是int，str，float，nan都行
+    #   Array type, one-dimensional and two-dimensional, the data in it is int, str, float, nan.
     # output:
-    #     数组类型，大小跟之前的数据一样，是True和False
+    #   Array type, the size is the same as the previous data, it is True and False
 
     result = np.zeros(array.shape)
     if len(array.shape) == 1:
@@ -199,8 +199,9 @@ def array_isnan(array):
 
 def col_with_high_ratio_nan(threshold):
     # output:
-    #     返回列表类型
-    #     遍历所有的pkl中间文件，得到每个列名称的nan的数量统计，得到nan比例超过threshold的列名称
+    #   Return list type
+    #   Traverse all pkl intermediate files, get the statistics of the number of nans for each column name, 
+    #   and get the column names whose nan ratio exceeds the threshold
 
     if os.path.exists('save/col_na_ratio.pkl'):
         temp = pickle.load(open('save/col_na_ratio.pkl', 'rb'))
@@ -237,7 +238,7 @@ def col_with_high_ratio_nan(threshold):
         
 
 def form_feature_name(threshold=0.1):
-    # 返回feature的列名称，列表类型
+    # Return the column name of feature, list type
     
     temp = os.listdir('save/classified by id')
     temp = pickle.load(open('save/classified by id/'+temp[0], 'rb'))
@@ -266,12 +267,12 @@ def form_feature_name(threshold=0.1):
 
 def fill_na(array, N_error=5):
     """
-    input:
-        array: col victor
-        N_error: 连续多少个nan表示error
-    output:
-        1、'error', str， 代表有存在连续5个nan
-        2、array，代表插值过后的结果
+     input:
+         array: col victor
+         N_error: how many consecutive nans indicate error
+     output:
+         1. 'error', str, means that there are 5 consecutive nans
+         2, array, representing the result after interpolation
     """
 
     error_flag = 0
@@ -314,8 +315,7 @@ def fill_na(array, N_error=5):
 
 
 def tran_nan(array):
-    # 将array的nan统一为np.nan，而且将数组的object变为float类型
-
+    # Unify the nan of the array as np.nan, and change the object of the array to float type
     result = np.zeros(array.shape)
     if len(array.shape) == 1:
         for i in range(len(array)):
@@ -341,16 +341,16 @@ def tran_nan(array):
 
 
 def form_raw_dataset(feature_col, label_length, intID_select_list=None, verbose=True):
-    # 默认只是导入特定领域的数据
-    # 根据所需要的feature_col(list类型)，形成X，label，lengths（array类型）
-    # 其中X是已经处理过，不包含nan，经过插值，0的奇异值变为0.1
+    # By default only import data from a specific field
+    # According to the required feature_col (list type), form X, label, lengths (array type)
+    # Where X is already processed, does not contain nan, after interpolation, the singular value of 0 becomes 0.1
     # input:
-    #     feature_col: 要处理的数据的列名称
-    #     label_length: triple barries 的时间长度
-    #     intID_select_list: list, 选择生成样本的股票的int代码
-    #     verbose: 是否要输出打印信息
+    #   feature_col: Column name of the data to process
+    #   label_length: time length of triple bars
+    #   intID_select_list: list, select the int code of the stock that generated the sample
+    #   verbose: whether to output print information
     # output:
-    #     X, label, lengths, col_nan_record(记录每一列有多少个nan的情况)
+    #   X, label, lengths, col_nan_record (record how many nans there are in each column)
 
     # temp = pd.read_table('data/dianzixinxi.txt').secID.values
     # intID_select_list = [i for i in temp]

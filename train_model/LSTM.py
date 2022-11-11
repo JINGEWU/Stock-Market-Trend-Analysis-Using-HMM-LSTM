@@ -107,7 +107,7 @@ def self_LSTM(X, y, lengths, file_name):
     print('train    ', form_accuracy(X_train, y_train, model))
     print('valid   ', form_accuracy(X_valid, y_valid, model))
 
-    mms_file_name = 'C:/Users/Administrator/Desktop/HMM_program/save' + file_name + '_mms.pkl'
+    mms_file_name = '/content/drive/MyDrive/Projects/Database/Models/' + file_name + '_mms.pkl'
     pickle.dump(mms, open(mms_file_name, 'wb'))
-    model_file_name = 'C:/Users/Administrator/Desktop/HMM_program/save' + file_name + '_model.h5'
+    model_file_name = '/content/drive/MyDrive/Projects/Database/Models/' + file_name + '_model.h5'
     model.save(model_file_name)
